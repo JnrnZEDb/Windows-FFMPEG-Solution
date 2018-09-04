@@ -7,6 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Google.Apis.Auth.OAuth2;
+using Google.Apis.Services;
+using Google.Apis.Upload;
+using Google.Apis.Util.Store;
+using Google.Apis.YouTube.v3;
+using Google.Apis.YouTube.v3.Data;
 
 namespace Windows_FFMPEG_Solution
 {
@@ -43,5 +49,34 @@ namespace Windows_FFMPEG_Solution
         {
 
         }
+
+        private void onlineUploadTabButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-}
+    internal class UploadVideo
+    {
+        [STAThread]
+        static void Main(string[] args)
+        {
+            Console.WriteLine("YouTube Data API: Upload Video");
+            Console.WriteLine("==============================");
+
+            try
+            {
+                new UploadVideo().Run().Wait();
+            }
+            catch (AggregateException ex)
+            {
+                foreach (var e in ex.InnerExceptions)
+                {
+                    Console.WriteLine("Error: " + e.Message);
+                }
+            }
+
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+        }
+
+    }

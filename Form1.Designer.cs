@@ -44,15 +44,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.uploadTab = new System.Windows.Forms.TabPage();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.progressBar3 = new System.Windows.Forms.ProgressBar();
             this.videoUploadTabTextBox = new System.Windows.Forms.TextBox();
             this.videoUploadTabButton = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.onlineUploadTabButton = new System.Windows.Forms.Button();
             this.allTab.SuspendLayout();
             this.mediagenTab.SuspendLayout();
             this.uploadTab.SuspendLayout();
@@ -209,6 +210,7 @@
             // uploadTab
             // 
             this.uploadTab.BackColor = System.Drawing.Color.LightGray;
+            this.uploadTab.Controls.Add(this.onlineUploadTabButton);
             this.uploadTab.Controls.Add(this.textBox5);
             this.uploadTab.Controls.Add(this.button3);
             this.uploadTab.Controls.Add(this.dateTimePicker1);
@@ -225,6 +227,44 @@
             this.uploadTab.TabIndex = 1;
             this.uploadTab.Text = "Upload";
             this.uploadTab.Click += new System.EventHandler(this.uploadTab_Click);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(72, 212);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(697, 31);
+            this.textBox5.TabIndex = 13;
+            this.textBox5.Text = "C:\\\\IMAGE PATH";
+            // 
+            // button3
+            // 
+            this.button3.AutoSize = true;
+            this.button3.Location = new System.Drawing.Point(883, 202);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(345, 50);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Upload a Thumbnail";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(72, 300);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(401, 31);
+            this.dateTimePicker1.TabIndex = 11;
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "Facebook",
+            "Youtube",
+            "Twitter"});
+            this.checkedListBox1.Location = new System.Drawing.Point(72, 17);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(230, 82);
+            this.checkedListBox1.TabIndex = 10;
+            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -271,43 +311,15 @@
             this.videoUploadTabButton.UseVisualStyleBackColor = true;
             this.videoUploadTabButton.Click += new System.EventHandler(this.videoUploadTabButton_Click);
             // 
-            // checkedListBox1
+            // onlineUploadTabButton
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Facebook",
-            "Youtube",
-            "Twitter"});
-            this.checkedListBox1.Location = new System.Drawing.Point(72, 17);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(230, 82);
-            this.checkedListBox1.TabIndex = 10;
-            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(72, 300);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(401, 31);
-            this.dateTimePicker1.TabIndex = 11;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(72, 212);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(697, 31);
-            this.textBox5.TabIndex = 13;
-            this.textBox5.Text = "C:\\\\IMAGE PATH";
-            // 
-            // button3
-            // 
-            this.button3.AutoSize = true;
-            this.button3.Location = new System.Drawing.Point(883, 202);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(345, 50);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Upload a Thumbnail";
-            this.button3.UseVisualStyleBackColor = true;
+            this.onlineUploadTabButton.Location = new System.Drawing.Point(818, 275);
+            this.onlineUploadTabButton.Name = "onlineUploadTabButton";
+            this.onlineUploadTabButton.Size = new System.Drawing.Size(354, 83);
+            this.onlineUploadTabButton.TabIndex = 14;
+            this.onlineUploadTabButton.Text = "Upload Online";
+            this.onlineUploadTabButton.UseVisualStyleBackColor = true;
+            this.onlineUploadTabButton.Click += new System.EventHandler(this.onlineUploadTabButton_Click);
             // 
             // Form1
             // 
@@ -358,6 +370,7 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button onlineUploadTabButton;
     }
 }
 
