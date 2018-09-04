@@ -17,16 +17,31 @@ namespace Windows_FFMPEG_Solution
             InitializeComponent();
         }
 
-        private void videoUploadButton_Click(object sender, EventArgs e)
+        private void videoUploadTabButton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openvideo1FileDialog = new OpenFileDialog();
-            openvideo1FileDialog.Filter = "Choose a video file|*.mp4";
-            openvideo1FileDialog.Title = "Select a Cursor File";
-            if (openvideo1FileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            OpenFileDialog openvideoUploadTabFileDialog = new OpenFileDialog();
+            openvideoUploadTabFileDialog.Filter = "Choose a video file|*.mp4";
+            openvideoUploadTabFileDialog.Title = "Select a Cursor File";
+            if (openvideoUploadTabFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 // Assign the cursor in the Stream to the Form's Cursor property.  
-                video1TextBox.Text = openvideo1FileDialog.InitialDirectory + openvideo1FileDialog.FileName; ;
+                videoUploadTabTextBox.Text = openvideoUploadTabFileDialog.FileName ;
             }
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uploadTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
