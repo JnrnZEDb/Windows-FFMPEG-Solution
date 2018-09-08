@@ -49,11 +49,17 @@
             this.thumbnailUploadTabButton = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.progresslabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.progressBar3 = new System.Windows.Forms.ProgressBar();
             this.videoUploadTabTextBox = new System.Windows.Forms.TextBox();
             this.videoUploadTabButton = new System.Windows.Forms.Button();
+            this.tagsUploadTabTextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.descriptionUploadTabTextBox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.labe8 = new System.Windows.Forms.Label();
+            this.titleUploadTabTextBox = new System.Windows.Forms.TextBox();
             this.allTab.SuspendLayout();
             this.mediagenTab.SuspendLayout();
             this.uploadTab.SuspendLayout();
@@ -114,7 +120,7 @@
             this.allTab.Location = new System.Drawing.Point(0, 0);
             this.allTab.Name = "allTab";
             this.allTab.SelectedIndex = 0;
-            this.allTab.Size = new System.Drawing.Size(1318, 638);
+            this.allTab.Size = new System.Drawing.Size(1751, 906);
             this.allTab.TabIndex = 15;
             // 
             // mediagenTab
@@ -210,12 +216,18 @@
             // uploadTab
             // 
             this.uploadTab.BackColor = System.Drawing.Color.LightGray;
+            this.uploadTab.Controls.Add(this.tagsUploadTabTextBox);
+            this.uploadTab.Controls.Add(this.label8);
+            this.uploadTab.Controls.Add(this.descriptionUploadTabTextBox);
+            this.uploadTab.Controls.Add(this.label9);
+            this.uploadTab.Controls.Add(this.labe8);
+            this.uploadTab.Controls.Add(this.titleUploadTabTextBox);
             this.uploadTab.Controls.Add(this.onlineUploadTabButton);
             this.uploadTab.Controls.Add(this.thumbnailUploadTabTextBox);
             this.uploadTab.Controls.Add(this.thumbnailUploadTabButton);
             this.uploadTab.Controls.Add(this.dateTimePicker1);
             this.uploadTab.Controls.Add(this.checkedListBox1);
-            this.uploadTab.Controls.Add(this.label6);
+            this.uploadTab.Controls.Add(this.progresslabel);
             this.uploadTab.Controls.Add(this.label7);
             this.uploadTab.Controls.Add(this.progressBar3);
             this.uploadTab.Controls.Add(this.videoUploadTabTextBox);
@@ -223,14 +235,14 @@
             this.uploadTab.Location = new System.Drawing.Point(8, 39);
             this.uploadTab.Name = "uploadTab";
             this.uploadTab.Padding = new System.Windows.Forms.Padding(3);
-            this.uploadTab.Size = new System.Drawing.Size(1302, 591);
+            this.uploadTab.Size = new System.Drawing.Size(1735, 859);
             this.uploadTab.TabIndex = 1;
             this.uploadTab.Text = "Upload";
             this.uploadTab.Click += new System.EventHandler(this.uploadTab_Click);
             // 
             // onlineUploadTabButton
             // 
-            this.onlineUploadTabButton.Location = new System.Drawing.Point(818, 275);
+            this.onlineUploadTabButton.Location = new System.Drawing.Point(1301, 638);
             this.onlineUploadTabButton.Name = "onlineUploadTabButton";
             this.onlineUploadTabButton.Size = new System.Drawing.Size(354, 83);
             this.onlineUploadTabButton.TabIndex = 14;
@@ -259,7 +271,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(72, 300);
+            this.dateTimePicker1.Location = new System.Drawing.Point(72, 662);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(401, 31);
             this.dateTimePicker1.TabIndex = 11;
@@ -277,20 +289,20 @@
             this.checkedListBox1.TabIndex = 10;
             this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
-            // label6
+            // progresslabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1118, 391);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 25);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Not Started";
+            this.progresslabel.AutoSize = true;
+            this.progresslabel.Location = new System.Drawing.Point(1108, 781);
+            this.progresslabel.Name = "progresslabel";
+            this.progresslabel.Size = new System.Drawing.Size(120, 25);
+            this.progresslabel.TabIndex = 9;
+            this.progresslabel.Text = "Not Started";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.875F);
-            this.label7.Location = new System.Drawing.Point(54, 391);
+            this.label7.Location = new System.Drawing.Point(43, 767);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(157, 39);
             this.label7.TabIndex = 8;
@@ -298,7 +310,7 @@
             // 
             // progressBar3
             // 
-            this.progressBar3.Location = new System.Drawing.Point(249, 382);
+            this.progressBar3.Location = new System.Drawing.Point(238, 758);
             this.progressBar3.Name = "progressBar3";
             this.progressBar3.Size = new System.Drawing.Size(839, 57);
             this.progressBar3.TabIndex = 7;
@@ -322,11 +334,68 @@
             this.videoUploadTabButton.UseVisualStyleBackColor = true;
             this.videoUploadTabButton.Click += new System.EventHandler(this.videoUploadTabButton_Click);
             // 
+            // tagsUploadTabTextBox
+            // 
+            this.tagsUploadTabTextBox.Location = new System.Drawing.Point(261, 456);
+            this.tagsUploadTabTextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.tagsUploadTabTextBox.Multiline = true;
+            this.tagsUploadTabTextBox.Name = "tagsUploadTabTextBox";
+            this.tagsUploadTabTextBox.Size = new System.Drawing.Size(1036, 62);
+            this.tagsUploadTabTextBox.TabIndex = 22;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(147, 462);
+            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 25);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Tags:";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // descriptionUploadTabTextBox
+            // 
+            this.descriptionUploadTabTextBox.Location = new System.Drawing.Point(263, 374);
+            this.descriptionUploadTabTextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.descriptionUploadTabTextBox.Multiline = true;
+            this.descriptionUploadTabTextBox.Name = "descriptionUploadTabTextBox";
+            this.descriptionUploadTabTextBox.Size = new System.Drawing.Size(1036, 62);
+            this.descriptionUploadTabTextBox.TabIndex = 20;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(67, 393);
+            this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(184, 25);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Video description:";
+            // 
+            // labe8
+            // 
+            this.labe8.AutoSize = true;
+            this.labe8.Location = new System.Drawing.Point(154, 315);
+            this.labe8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labe8.Name = "labe8";
+            this.labe8.Size = new System.Drawing.Size(59, 25);
+            this.labe8.TabIndex = 18;
+            this.labe8.Text = "Title:";
+            // 
+            // titleUploadTabTextBox
+            // 
+            this.titleUploadTabTextBox.Location = new System.Drawing.Point(261, 312);
+            this.titleUploadTabTextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.titleUploadTabTextBox.Name = "titleUploadTabTextBox";
+            this.titleUploadTabTextBox.Size = new System.Drawing.Size(1036, 31);
+            this.titleUploadTabTextBox.TabIndex = 17;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1310, 622);
+            this.ClientSize = new System.Drawing.Size(1735, 893);
             this.Controls.Add(this.allTab);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button2);
@@ -362,7 +431,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ProgressBar progressBar2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label progresslabel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ProgressBar progressBar3;
         private System.Windows.Forms.TextBox videoUploadTabTextBox;
@@ -372,6 +441,12 @@
         private System.Windows.Forms.Button thumbnailUploadTabButton;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button onlineUploadTabButton;
+        private System.Windows.Forms.TextBox tagsUploadTabTextBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox descriptionUploadTabTextBox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labe8;
+        private System.Windows.Forms.TextBox titleUploadTabTextBox;
     }
 }
 

@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,6 +28,7 @@ namespace Windows_FFMPEG_Solution
         public Form1()
         {
             InitializeComponent();
+            Control.CheckForIllegalCrossThreadCalls = false;
         }
 
         private void videoUploadTabButton_Click(object sender, EventArgs e)
@@ -58,8 +60,81 @@ namespace Windows_FFMPEG_Solution
 
         private void onlineUploadTabButton_Click(object sender, EventArgs e)
         {
-            UploadVideo openvideo = new UploadVideo();
+            {
+                progresslabel.Text = "Upload started";
+                try
+                {
+                    Thread thead = new Thread(() =>
+                    {Run().Wait();});
+                    thead.IsBackground = true;
+                    thead.Start();
+
+                }
+                catch (AggregateException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            async Task Run()
+            {
+                UserCredential credential;
+                using (var stream = new FileStream("client_id.json", FileMode.Open, FileAccess.Read))
+                {
+                    credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+                        GoogleClientSecrets.Load(stream).Secrets,
+                        // This OAuth 2.0 access scope allows an application to upload files to the
+                        // authenticated user's YouTube channel, but doesn't allow other types of access.
+                        new[] { YouTubeService.Scope.YoutubeUpload },
+                        "user",
+                        CancellationToken.None
+                    );
+                }
+
+                var youtubeService = new YouTubeService(new BaseClientService.Initializer()
+                {
+                    HttpClientInitializer = credential,
+                    ApplicationName = Assembly.GetExecutingAssembly().GetName().Name
+                });
+
+                var video = new Video();
+                video.Snippet = new VideoSnippet();
+                video.Snippet.Title = titleUploadTabTextBox.Text;
+                video.Snippet.Description = descriptionUploadTabTextBox.Text;
+                string[] puretags = Regex.Split(tagsUploadTabTextBox.Text, ",");
+                video.Snippet.Tags = puretags;
+                video.Snippet.CategoryId = "22"; // See https://developers.google.com/youtube/v3/docs/videoCategories/list
+                video.Status = new VideoStatus();
+                video.Status.PrivacyStatus = "public"; // or "private" or "public"
+                var filePath = videoUploadTabTextBox.Text; // Replace with path to actual movie file.
+
+                using (var fileStream = new FileStream(filePath, FileMode.Open))
+                {
+                    var videosInsertRequest = youtubeService.Videos.Insert(video, "snippet,status", fileStream, "video/*");
+                    videosInsertRequest.ProgressChanged += videosInsertRequest_ProgressChanged;
+                    videosInsertRequest.ResponseReceived += videosInsertRequest_ResponseReceived;
+
+                    await videosInsertRequest.UploadAsync();
+                }
+            }
+            void videosInsertRequest_ProgressChanged(Google.Apis.Upload.IUploadProgress progress)
+            {
+                switch (progress.Status)
+                {
+                    case UploadStatus.Uploading:
+                        progresslabel.Text = String.Format("{0} bytes sent.", progress.BytesSent);
+                        break;
+
+                    case UploadStatus.Failed:
+                        progresslabel.Text = String.Format("An error prevented the upload from completing.\n{0}", progress.Exception);
+                        break;
+                }
+            }
         }
+        void videosInsertRequest_ResponseReceived(Video video)
+        {
+            progresslabel.Text = string.Format("Video id '{0}' was successfully uploaded.", video.Id);
+        }
+
 
         private void thumbnailUploadTabButton_Click(object sender, EventArgs e)
         {
@@ -71,6 +146,11 @@ namespace Windows_FFMPEG_Solution
                 // Assign the cursor in the Stream to the Form's Cursor property.  
                 thumbnailUploadTabTextBox.Text = openthumbnailUploadTabFileDialog.FileName;
             }
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
  
