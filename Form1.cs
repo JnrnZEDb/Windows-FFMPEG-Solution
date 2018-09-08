@@ -79,7 +79,7 @@ namespace Windows_FFMPEG_Solution
             async Task Run()
             {
                 UserCredential credential;
-                using (var stream = new FileStream("client_id.json", FileMode.Open, FileAccess.Read))
+                using (var stream = new FileStream("/Windows/JSON/client_id.json", FileMode.Open, FileAccess.Read))
                 {
                     credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
                         GoogleClientSecrets.Load(stream).Secrets,
