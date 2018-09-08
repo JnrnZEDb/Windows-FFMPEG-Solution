@@ -44,8 +44,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.uploadTab = new System.Windows.Forms.TabPage();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.onlineUploadTabButton = new System.Windows.Forms.Button();
+            this.thumbnailUploadTabTextBox = new System.Windows.Forms.TextBox();
+            this.thumbnailUploadTabButton = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.progressBar3 = new System.Windows.Forms.ProgressBar();
             this.videoUploadTabTextBox = new System.Windows.Forms.TextBox();
             this.videoUploadTabButton = new System.Windows.Forms.Button();
-            this.onlineUploadTabButton = new System.Windows.Forms.Button();
             this.allTab.SuspendLayout();
             this.mediagenTab.SuspendLayout();
             this.uploadTab.SuspendLayout();
@@ -211,8 +211,8 @@
             // 
             this.uploadTab.BackColor = System.Drawing.Color.LightGray;
             this.uploadTab.Controls.Add(this.onlineUploadTabButton);
-            this.uploadTab.Controls.Add(this.textBox5);
-            this.uploadTab.Controls.Add(this.button3);
+            this.uploadTab.Controls.Add(this.thumbnailUploadTabTextBox);
+            this.uploadTab.Controls.Add(this.thumbnailUploadTabButton);
             this.uploadTab.Controls.Add(this.dateTimePicker1);
             this.uploadTab.Controls.Add(this.checkedListBox1);
             this.uploadTab.Controls.Add(this.label6);
@@ -228,23 +228,34 @@
             this.uploadTab.Text = "Upload";
             this.uploadTab.Click += new System.EventHandler(this.uploadTab_Click);
             // 
-            // textBox5
+            // onlineUploadTabButton
             // 
-            this.textBox5.Location = new System.Drawing.Point(72, 212);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(697, 31);
-            this.textBox5.TabIndex = 13;
-            this.textBox5.Text = "C:\\\\IMAGE PATH";
+            this.onlineUploadTabButton.Location = new System.Drawing.Point(818, 275);
+            this.onlineUploadTabButton.Name = "onlineUploadTabButton";
+            this.onlineUploadTabButton.Size = new System.Drawing.Size(354, 83);
+            this.onlineUploadTabButton.TabIndex = 14;
+            this.onlineUploadTabButton.Text = "Upload Online";
+            this.onlineUploadTabButton.UseVisualStyleBackColor = true;
+            this.onlineUploadTabButton.Click += new System.EventHandler(this.onlineUploadTabButton_Click);
             // 
-            // button3
+            // thumbnailUploadTabTextBox
             // 
-            this.button3.AutoSize = true;
-            this.button3.Location = new System.Drawing.Point(883, 202);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(345, 50);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Upload a Thumbnail";
-            this.button3.UseVisualStyleBackColor = true;
+            this.thumbnailUploadTabTextBox.Location = new System.Drawing.Point(72, 212);
+            this.thumbnailUploadTabTextBox.Name = "thumbnailUploadTabTextBox";
+            this.thumbnailUploadTabTextBox.Size = new System.Drawing.Size(697, 31);
+            this.thumbnailUploadTabTextBox.TabIndex = 13;
+            this.thumbnailUploadTabTextBox.Text = "C:\\\\IMAGE PATH";
+            // 
+            // thumbnailUploadTabButton
+            // 
+            this.thumbnailUploadTabButton.AutoSize = true;
+            this.thumbnailUploadTabButton.Location = new System.Drawing.Point(883, 202);
+            this.thumbnailUploadTabButton.Name = "thumbnailUploadTabButton";
+            this.thumbnailUploadTabButton.Size = new System.Drawing.Size(345, 50);
+            this.thumbnailUploadTabButton.TabIndex = 12;
+            this.thumbnailUploadTabButton.Text = "Upload a Thumbnail";
+            this.thumbnailUploadTabButton.UseVisualStyleBackColor = true;
+            this.thumbnailUploadTabButton.Click += new System.EventHandler(this.thumbnailUploadTabButton_Click);
             // 
             // dateTimePicker1
             // 
@@ -311,16 +322,6 @@
             this.videoUploadTabButton.UseVisualStyleBackColor = true;
             this.videoUploadTabButton.Click += new System.EventHandler(this.videoUploadTabButton_Click);
             // 
-            // onlineUploadTabButton
-            // 
-            this.onlineUploadTabButton.Location = new System.Drawing.Point(818, 275);
-            this.onlineUploadTabButton.Name = "onlineUploadTabButton";
-            this.onlineUploadTabButton.Size = new System.Drawing.Size(354, 83);
-            this.onlineUploadTabButton.TabIndex = 14;
-            this.onlineUploadTabButton.Text = "Upload Online";
-            this.onlineUploadTabButton.UseVisualStyleBackColor = true;
-            this.onlineUploadTabButton.Click += new System.EventHandler(this.onlineUploadTabButton_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
@@ -367,8 +368,8 @@
         private System.Windows.Forms.TextBox videoUploadTabTextBox;
         private System.Windows.Forms.Button videoUploadTabButton;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox thumbnailUploadTabTextBox;
+        private System.Windows.Forms.Button thumbnailUploadTabButton;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button onlineUploadTabButton;
     }
