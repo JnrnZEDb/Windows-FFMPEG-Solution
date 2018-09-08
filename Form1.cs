@@ -60,13 +60,14 @@ namespace Windows_FFMPEG_Solution
 
         private void onlineUploadTabButton_Click(object sender, EventArgs e)
         {
-            {
-                progresslabel.Text = "Upload started";
+        {
+            progresslabel.Text = "Upload started";
                 try
                 {
-                    Thread thead = new Thread(() =>
-                    {Run().Wait();});
-                    thead.IsBackground = true;
+                    Thread thead = new Thread(() => {Run().Wait();})
+                    {
+                        IsBackground = true
+                    };
                     thead.Start();
 
                 }
