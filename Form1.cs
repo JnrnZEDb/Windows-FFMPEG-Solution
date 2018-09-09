@@ -61,7 +61,7 @@ namespace Windows_FFMPEG_Solution
         private void onlineUploadTabButton_Click(object sender, EventArgs e)
         {
         {
-            progresslabel.Text = "Upload started";
+                progresslabel.Text = "Upload started";
                 try
                 {
                     Thread thead = new Thread(() => {Run().Wait();})
@@ -105,7 +105,9 @@ namespace Windows_FFMPEG_Solution
                 video.Snippet.Tags = puretags;
                 video.Snippet.CategoryId = "22"; // See https://developers.google.com/youtube/v3/docs/videoCategories/list
                 video.Status = new VideoStatus();
-                video.Status.PrivacyStatus = "public"; // or "private" or "public"
+                video.Status.PrivacyStatus = "private"; // or "private" or "public"
+                string truedate = dateTimePicker1.Value.ToString("yyyy:MM:dd") + "T" + dateTimePicker2.Value.ToString("HH:mm") + "Z";
+                video.Status.PublishAt = DateTime.Parse(truedate);
                 var filePath = videoUploadTabTextBox.Text; // Replace with path to actual movie file.
 
                 using (var fileStream = new FileStream(filePath, FileMode.Open))
@@ -150,6 +152,23 @@ namespace Windows_FFMPEG_Solution
         }
 
         private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            DateTimePicker dateTimePicker1 = new DateTimePicker();
+        }
+
+        public void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            DateTimePicker dateTimePicker2 = new DateTimePicker();
+            dateTimePicker2.Format = DateTimePickerFormat.Time;
+            dateTimePicker2.ShowUpDown = true;
+        }
+
+        private void testbutton_Click(object sender, EventArgs e)
         {
 
         }
