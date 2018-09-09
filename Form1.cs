@@ -53,14 +53,19 @@ namespace Windows_FFMPEG_Solution
 
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void checkedListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
         private void onlineUploadTabButton_Click(object sender, EventArgs e)
         {
-        {
+            if (videoUploadTabTextBox.Text.Contains("PATH") || (thumbnailUploadTabTextBox.Text.Contains("PATH")))
+            {
+                MessageBox.Show("Please select an video/thumbnail first!");
+            }
+            else
+            {
                 progresslabel.Text = "Upload started";
                 try
                 {
@@ -173,7 +178,9 @@ namespace Windows_FFMPEG_Solution
 
         public void testbutton_Click(object sender, EventArgs e)
         {
-
+            if (checkedListBox.GetItemChecked(1) == true)
+                testlabel.Text = "Selected 1";
+                //MessageBox.Show("Please select an Item first!");
         }
 
         private void progressBar_Click(object sender, EventArgs e)

@@ -44,6 +44,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.uploadTab = new System.Windows.Forms.TabPage();
+            this.testbutton = new System.Windows.Forms.Button();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.testlabel = new System.Windows.Forms.Label();
             this.tagsUploadTabTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -55,14 +57,12 @@
             this.thumbnailUploadTabTextBox = new System.Windows.Forms.TextBox();
             this.thumbnailUploadTabButton = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBox = new System.Windows.Forms.CheckedListBox();
             this.progresslabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.videoUploadTabTextBox = new System.Windows.Forms.TextBox();
             this.videoUploadTabButton = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.testbutton = new System.Windows.Forms.Button();
             this.allTab.SuspendLayout();
             this.mediagenTab.SuspendLayout();
             this.uploadTab.SuspendLayout();
@@ -232,7 +232,7 @@
             this.uploadTab.Controls.Add(this.thumbnailUploadTabTextBox);
             this.uploadTab.Controls.Add(this.thumbnailUploadTabButton);
             this.uploadTab.Controls.Add(this.dateTimePicker1);
-            this.uploadTab.Controls.Add(this.checkedListBox1);
+            this.uploadTab.Controls.Add(this.checkedListBox);
             this.uploadTab.Controls.Add(this.progresslabel);
             this.uploadTab.Controls.Add(this.label7);
             this.uploadTab.Controls.Add(this.progressBar);
@@ -245,6 +245,28 @@
             this.uploadTab.TabIndex = 1;
             this.uploadTab.Text = "Upload";
             this.uploadTab.Click += new System.EventHandler(this.uploadTab_Click);
+            // 
+            // testbutton
+            // 
+            this.testbutton.Location = new System.Drawing.Point(867, 17);
+            this.testbutton.Name = "testbutton";
+            this.testbutton.Size = new System.Drawing.Size(252, 42);
+            this.testbutton.TabIndex = 25;
+            this.testbutton.Text = "TEST";
+            this.testbutton.UseVisualStyleBackColor = true;
+            this.testbutton.Click += new System.EventHandler(this.testbutton_Click);
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CustomFormat = "";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker2.Location = new System.Drawing.Point(478, 587);
+            this.dateTimePicker2.MinDate = new System.DateTime(2018, 9, 8, 0, 0, 0, 0);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 31);
+            this.dateTimePicker2.TabIndex = 24;
+            this.dateTimePicker2.Value = new System.DateTime(2018, 9, 8, 0, 0, 0, 0);
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // testlabel
             // 
@@ -352,18 +374,18 @@
             this.dateTimePicker1.Value = new System.DateTime(2018, 9, 8, 0, 0, 0, 0);
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // checkedListBox1
+            // checkedListBox
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.checkedListBox.FormattingEnabled = true;
+            this.checkedListBox.Items.AddRange(new object[] {
             "Facebook",
             "Youtube",
             "Twitter"});
-            this.checkedListBox1.Location = new System.Drawing.Point(72, 17);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(230, 82);
-            this.checkedListBox1.TabIndex = 10;
-            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            this.checkedListBox.Location = new System.Drawing.Point(72, 17);
+            this.checkedListBox.Name = "checkedListBox";
+            this.checkedListBox.Size = new System.Drawing.Size(230, 82);
+            this.checkedListBox.TabIndex = 10;
+            this.checkedListBox.SelectedIndexChanged += new System.EventHandler(this.checkedListBox_SelectedIndexChanged);
             // 
             // progresslabel
             // 
@@ -411,28 +433,6 @@
             this.videoUploadTabButton.UseVisualStyleBackColor = true;
             this.videoUploadTabButton.Click += new System.EventHandler(this.videoUploadTabButton_Click);
             // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CustomFormat = "";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(478, 587);
-            this.dateTimePicker2.MinDate = new System.DateTime(2018, 9, 8, 0, 0, 0, 0);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 31);
-            this.dateTimePicker2.TabIndex = 24;
-            this.dateTimePicker2.Value = new System.DateTime(2018, 9, 8, 0, 0, 0, 0);
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
-            // 
-            // testbutton
-            // 
-            this.testbutton.Location = new System.Drawing.Point(867, 17);
-            this.testbutton.Name = "testbutton";
-            this.testbutton.Size = new System.Drawing.Size(252, 42);
-            this.testbutton.TabIndex = 25;
-            this.testbutton.Text = "TEST";
-            this.testbutton.UseVisualStyleBackColor = true;
-            this.testbutton.Click += new System.EventHandler(this.testbutton_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
@@ -478,7 +478,7 @@
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.TextBox videoUploadTabTextBox;
         private System.Windows.Forms.Button videoUploadTabButton;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox checkedListBox;
         private System.Windows.Forms.TextBox thumbnailUploadTabTextBox;
         private System.Windows.Forms.Button thumbnailUploadTabButton;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
