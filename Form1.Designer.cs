@@ -58,7 +58,7 @@
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.progresslabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.progressBar3 = new System.Windows.Forms.ProgressBar();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.videoUploadTabTextBox = new System.Windows.Forms.TextBox();
             this.videoUploadTabButton = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -235,7 +235,7 @@
             this.uploadTab.Controls.Add(this.checkedListBox1);
             this.uploadTab.Controls.Add(this.progresslabel);
             this.uploadTab.Controls.Add(this.label7);
-            this.uploadTab.Controls.Add(this.progressBar3);
+            this.uploadTab.Controls.Add(this.progressBar);
             this.uploadTab.Controls.Add(this.videoUploadTabTextBox);
             this.uploadTab.Controls.Add(this.videoUploadTabButton);
             this.uploadTab.Location = new System.Drawing.Point(8, 39);
@@ -384,12 +384,13 @@
             this.label7.TabIndex = 8;
             this.label7.Text = "Progress";
             // 
-            // progressBar3
+            // progressBar
             // 
-            this.progressBar3.Location = new System.Drawing.Point(238, 758);
-            this.progressBar3.Name = "progressBar3";
-            this.progressBar3.Size = new System.Drawing.Size(839, 57);
-            this.progressBar3.TabIndex = 7;
+            this.progressBar.Location = new System.Drawing.Point(238, 758);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(839, 57);
+            this.progressBar.TabIndex = 7;
+            this.progressBar.Click += new System.EventHandler(this.progressBar_Click);
             // 
             // videoUploadTabTextBox
             // 
@@ -474,7 +475,7 @@
         private System.Windows.Forms.ProgressBar progressBar2;
         private System.Windows.Forms.Label progresslabel;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ProgressBar progressBar3;
+        private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.TextBox videoUploadTabTextBox;
         private System.Windows.Forms.Button videoUploadTabButton;
         private System.Windows.Forms.CheckedListBox checkedListBox1;

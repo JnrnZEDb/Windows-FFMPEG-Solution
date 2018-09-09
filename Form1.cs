@@ -106,8 +106,9 @@ namespace Windows_FFMPEG_Solution
                 video.Snippet.CategoryId = "22"; // See https://developers.google.com/youtube/v3/docs/videoCategories/list
                 video.Status = new VideoStatus();
                 video.Status.PrivacyStatus = "private"; // or "private" or "public"
-                string truedate = dateTimePicker1.Value.ToString("yyyy:MM:dd") + "T" + dateTimePicker2.Value.ToString("HH:mm") + "Z";
-                video.Status.PublishAt = DateTime.Parse(truedate);
+                string stringdate = dateTimePicker1.Value.ToString("yyyy:MM:dd") + "T" + dateTimePicker2.Value.ToString("HH:mm") + "Z";
+                var truedate = DateTime.ParseExact(stringdate, "yyyy':'MM':'dd'T'HH':'mm'Z'", System.Globalization.CultureInfo.CurrentCulture, System.Globalization.DateTimeStyles.None);
+                video.Status.PublishAt = truedate;
                 var filePath = videoUploadTabTextBox.Text; // Replace with path to actual movie file.
 
                 using (var fileStream = new FileStream(filePath, FileMode.Open))
@@ -131,11 +132,13 @@ namespace Windows_FFMPEG_Solution
                         progresslabel.Text = String.Format("An error prevented the upload from completing.\n{0}", progress.Exception);
                         break;
                 }
+                progressBar.Value = 50;
             }
         }
         void videosInsertRequest_ResponseReceived(Video video)
         {
             progresslabel.Text = string.Format("Video id '{0}' was successfully uploaded.", video.Id);
+            progressBar.Value = 100;
         }
 
 
@@ -168,7 +171,12 @@ namespace Windows_FFMPEG_Solution
             dateTimePicker2.ShowUpDown = true;
         }
 
-        private void testbutton_Click(object sender, EventArgs e)
+        public void testbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressBar_Click(object sender, EventArgs e)
         {
 
         }
